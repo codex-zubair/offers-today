@@ -32,7 +32,8 @@ const Navbar = () => {
     ]
 
     return (
-        <ul className='bg-slate-300'>
+        <ul className='bg-slate-300 flex justify-evenly'>
+
             {route.map(route => <Link route={route}></Link>)}
         </ul>
     );
