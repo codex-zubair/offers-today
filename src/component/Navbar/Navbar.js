@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from '../Link/Link';
 // import {HiMenuAlt4} from 'react-hero-icon/solid';
-import {Menu} from 'react-hero-icon/solid';
+import {Menu,Stop} from 'react-hero-icon/solid';
 
 const Navbar = () => {
+
+    const [open, setOpen] = useState(false);
+
     const route = [
 
         {
@@ -12,25 +15,24 @@ const Navbar = () => {
         },
         {
             name: 'Products',
-            link: '/home'
+            link: '/products'
         },
         {
             name: 'Users',
-            link: '/home'
+            link: '/users'
         },
         {
             name: 'Login',
-            link: '/home'
+            link: '/login'
         },
 
     ]
     return (
-        <nav className='bg-slate-600'>
+        <nav className='bg-slate-600 relative'>
         
-            <ol className='flex w-6/12 mx-auto justify-between py-5'>
-          
-
-           <button className='text-white'><Menu/></button>
+           <button className={`text-white lg:hidden md:hidden block p-3`} onClick={()=> setOpen(!open)} >{open?<Stop/> : <Menu/>} </button>
+            <ol className={`md:flex text-center md:static lg:static md:w-6/12 w-11/12 mx-auto justify-between py-5 ${open? '':' sm:absolute sm:top-[-200px]'}`}>
+            
             {route.map((route, index) => <Link key={index} route ={route}></Link>)}
             </ol>
            
