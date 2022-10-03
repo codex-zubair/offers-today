@@ -1,41 +1,40 @@
 import React from 'react';
 import Link from '../Link/Link';
+// import {HiMenuAlt4} from 'react-hero-icon/solid';
+import {Menu} from 'react-hero-icon/solid';
 
 const Navbar = () => {
-
     const route = [
+
         {
-            id: 1,
             name: 'Home',
-            path: '/home'
+            link: '/home'
         },
         {
-            id: 2,
             name: 'Products',
-            path: '/products'
+            link: '/home'
         },
         {
-            id: 3,
-            name: 'Orders',
-            path: '/orders'
+            name: 'Users',
+            link: '/home'
         },
         {
-            id: 4,
-            name: 'About',
-            path: '/about'
+            name: 'Login',
+            link: '/home'
         },
-        {
-            id: 5,
-            name: 'Contacts',
-            path: '/contacts'
-        },
+
     ]
-
     return (
-        <ul className='bg-slate-300 flex justify-evenly'>
+        <nav className='bg-slate-600'>
+        
+            <ol className='flex w-6/12 mx-auto justify-between py-5'>
+          
 
-            {route.map(route => <Link route={route}></Link>)}
-        </ul>
+           <button className='text-white'><Menu/></button>
+            {route.map((route, index) => <Link key={index} route ={route}></Link>)}
+            </ol>
+           
+        </nav>
     );
 };
 

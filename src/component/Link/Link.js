@@ -1,11 +1,11 @@
 import React from 'react';
-import './Link.css'
 
 const Link = ({route}) => {
+        const {link, name} = route;
     return (
-        <div>
-                <a href={route.path}>{route.name}</a>
-        </div>
+        <li className=' text-white hover:text-blue-600'>
+            <a href= {link}>{name}</a>
+        </li>
     );
 };
 
